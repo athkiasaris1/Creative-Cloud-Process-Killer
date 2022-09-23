@@ -92,6 +92,11 @@ echo  WARNING If it says ACCESS DENIED
 echo  You need to RUN this Script as
 echo  an administrator!
 echo[
+echo  WARNING 2 IF YOU WANT NONE OF THE
+echo  CC PROCESSES RUNNING PLEASE 
+echo  DISABLE CCXProcess.exe FROM TASK
+echo  MANAGER START UP
+echo[
 pause
 echo[
 schtasks.exe /Change /TN "Adobe Creative Cloud" /Disable
