@@ -12,6 +12,7 @@ echo           ^|                          ^|
 echo           ^|   Adobe Creative Cloud   ^|
 echo           ^|     Process Stopper      ^|
 echo           ^|                          ^|
+echo           ^|       Version 1.2        ^|
 echo           ^|                          ^|
 echo           ^| [1]   Kill all Creative  ^|
 echo           ^|        Cloud Processes   ^|
@@ -57,6 +58,10 @@ echo           ^|       personal use!      ^|
 echo           ^|                          ^|
 echo           ^| And I added the disable  ^|
 echo           ^|   on start up feature    ^|
+echo           ^|                          ^|
+echo           ^| If you want you can copy ^|
+echo           ^|the code and make your own^|
+echo           ^|         script!!!        ^|
 echo            --------------------------
 echo[
 echo[
@@ -66,36 +71,24 @@ cls
 goto menu
 )
 if errorlevel 3 (
-title Soon ^> Creative Cloud Process Stopper
 cls
-echo[
-echo  Coming Soon
-echo[
-echo[
-echo[
-echo[
-echo[
-echo[
-echo[
-echo[
-pause
-cls
+start https://github.com/athkiasaris1/Creative-Cloud-Process-Stopper
 goto menu
 )
 if errorlevel 2 (
 title Start Up Stopper ^> Creative Cloud Process Stopper
 cls
 echo[
-echo Creative Cloud Start Up Stopper
+echo  Creative Cloud Start Up Stopper
 echo[
-echo  WARNING If it says ACCESS DENIED
-echo  You need to RUN this Script as
-echo  an administrator!
+echo   WARNING If it says ACCESS DENIED
+echo   You need to RUN this Script as
+echo   an administrator!
 echo[
-echo  WARNING 2 IF YOU WANT NONE OF THE
-echo  CC PROCESSES RUNNING PLEASE 
-echo  DISABLE CCXProcess.exe FROM TASK
-echo  MANAGER START UP
+echo   WARNING 2 IF YOU WANT NONE OF THE
+echo   CC PROCESSES RUNNING PLEASE 
+echo   DISABLE CCXProcess.exe FROM TASK
+echo   MANAGER START UP
 echo[
 pause
 echo[
