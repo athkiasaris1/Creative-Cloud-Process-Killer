@@ -1,7 +1,101 @@
-title Loading ^> Creative Cloud Stopper
+title Loading ^> Creative Cloud Process Stopper
 @echo off
 mode con: cols=50 lines=30
 cls
+
+:args
+if "%~1"=="" GOTO menu
+if "%~1"=="-help" (
+title Creative Cloud Process Stopper
+echo[
+echo  USAGE -killcc ^-^> Kills all CC Processes
+echo[
+echo        -stopautocc ^-^> Stops the CC Processes
+echo                            from startup
+echo[
+pause
+exit
+)
+if "%~1"=="-killcc" (
+ if "%~2"=="" (
+ title Creative Cloud Process Killer
+ cls
+ echo[
+ echo  Adobe Creative Cloud ^(CC^) Process Killer
+ echo[
+ echo  WARNING This script will JUST kill the processes
+ echo  meaning YOU HAVE TO run it everytime you boot 
+ echo  your computer! Use the Stop Creative Cloud on
+ echo  start up tool on the main menu to stop it from 
+ echo  start up
+ echo[
+ pause
+ echo[
+ taskkill /F /im CClibrary.exe
+ taskkill /F /im CCXProcess.exe
+ taskkill /F /im CoreSync.exe
+ taskkill /F /im "Creative Cloud.exe"
+ taskkill /F /im "Creative Cloud Helper.exe"
+ taskkill /F /im "Adobe Desktop Service.exe"
+ taskkill /F /im AdobeNotificationClient.exe
+ taskkill /F /im AdobeIPCBroker.exe
+ taskkill /F /im "Adobe CEF Helper.exe"
+ echo[
+ echo DONE!
+ echo[
+ echo If it said success this tool worked!!!
+ echo[
+ echo If it said "ERROR The process was not found"
+ echo The processes were already killed or you 
+ echo need to run this script as an administrator
+ echo to kill the processes
+ echo[
+ pause
+ exit
+ )
+ else if "%2"=="-silent" (
+ cls
+ taskkill /F /im CClibrary.exe
+ taskkill /F /im CCXProcess.exe
+ taskkill /F /im CoreSync.exe
+ taskkill /F /im "Creative Cloud.exe"
+ taskkill /F /im "Creative Cloud Helper.exe"
+ taskkill /F /im "Adobe Desktop Service.exe"
+ taskkill /F /im AdobeNotificationClient.exe
+ taskkill /F /im AdobeIPCBroker.exe
+ taskkill /F /im "Adobe CEF Helper.exe"
+ exit
+)
+if "%~1"=="-stopautocc" (
+ if "%~2"=="" (
+ title Start Up Stopper ^> Creative Cloud Process Stopper
+ cls
+ echo[
+ echo  Creative Cloud Start Up Stopper
+ echo[
+ echo   WARNING If it says ACCESS DENIED
+ echo   You need to RUN this Script as
+ echo   an administrator!
+ echo[
+ echo   WARNING 2 IF YOU WANT NONE OF THE
+ echo   CC PROCESSES RUNNING PLEASE 
+ echo   DISABLE CCXProcess.exe FROM TASK
+ echo   MANAGER START UP
+ echo[
+ pause
+ echo[
+ schtasks.exe /Change /TN "Adobe Creative Cloud" /Disable
+ echo[
+ echo DONE!
+ echo[
+ pause
+ exit
+ )
+ else if "%~2"=="-silent" (
+ schtasks.exe /Change /TN "Adobe Creative Cloud" /Disable
+ exit
+ )
+)
 
 :menu
 title Creative Cloud Process Stopper
@@ -12,7 +106,7 @@ echo           ^|                          ^|
 echo           ^|   Adobe Creative Cloud   ^|
 echo           ^|     Process Stopper      ^|
 echo           ^|                          ^|
-echo           ^|       Version 1.2        ^|
+echo           ^|       Version 1.3        ^|
 echo           ^|                          ^|
 echo           ^| [1]   Kill all Creative  ^|
 echo           ^|        Cloud Processes   ^|
@@ -132,6 +226,7 @@ echo If it said "ERROR The process was not found"
 echo The processes were already killed or you 
 echo need to run this script as an administrator
 echo to kill the processes
+echo[
 pause
 cls
 goto menu
