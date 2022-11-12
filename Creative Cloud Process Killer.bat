@@ -29,6 +29,10 @@ if "%~1"=="-killcc" (
  echo  start up tool on the main menu to stop it from 
  echo  start up
  echo[
+ echo FOR THE PROCESS "AdobeUpdateService.exe" to get
+ echo TERMINATED you NEED TO RUN THE SCRIPT AS AN
+ echo ADMINISTRATOR!
+ echo[
  pause
  echo[
  taskkill /F /im CClibrary.exe
@@ -40,6 +44,8 @@ if "%~1"=="-killcc" (
  taskkill /F /im AdobeNotificationClient.exe
  taskkill /F /im AdobeIPCBroker.exe
  taskkill /F /im "Adobe CEF Helper.exe"
+ taskkill /F /im "adobe_licensing_wf.exe"
+ taskkill /F /im "AdobeUpdateService.exe"
  echo[
  echo DONE!
  echo[
@@ -64,6 +70,8 @@ if "%~1"=="-killcc" (
  taskkill /F /im AdobeNotificationClient.exe
  taskkill /F /im AdobeIPCBroker.exe
  taskkill /F /im "Adobe CEF Helper.exe"
+ taskkill /F /im "adobe_licensing_wf.exe"
+ taskkill /F /im "AdobeUpdateService.exe"
  exit
 )
 if "%~1"=="-stopautocc" (
@@ -106,7 +114,7 @@ echo           ^|                          ^|
 echo           ^|   Adobe Creative Cloud   ^|
 echo           ^|      Process Killer      ^|
 echo           ^|                          ^|
-echo           ^|      Version 1.3.1       ^|
+echo           ^|       Version: 1.4       ^|
 echo           ^|                          ^|
 echo           ^| [1]   Kill all Creative  ^|
 echo           ^|        Cloud Processes   ^|
@@ -206,6 +214,10 @@ echo  your computer! Use the Stop Creative Cloud on
 echo  start up tool on the main menu to stop it from 
 echo  start up
 echo[
+echo  FOR THE PROCESS "AdobeUpdateService.exe" to get
+echo  TERMINATED you NEED TO RUN THE SCRIPT AS AN
+echo  ADMINISTRATOR!
+echo[
 pause
 echo[
 taskkill /F /im CClibrary.exe
@@ -217,6 +229,8 @@ taskkill /F /im "Adobe Desktop Service.exe"
 taskkill /F /im AdobeNotificationClient.exe
 taskkill /F /im AdobeIPCBroker.exe
 taskkill /F /im "Adobe CEF Helper.exe"
+taskkill /F /im "adobe_licensing_wf.exe"
+taskkill /F /im "AdobeUpdateService.exe"
 echo[
 echo DONE!
 echo[
