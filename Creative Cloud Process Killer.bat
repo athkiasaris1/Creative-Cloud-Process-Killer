@@ -105,16 +105,32 @@ if "%~1"=="-stopautocc" (
  )
 )
 
+if "%~1"=="-updates" (
+ title Updates ^> Creative Cloud Stopper Killer
+ cls
+ echo[
+ echo  Check for updates
+ echo[
+ echo  Your Version: 1.5
+ echo[
+ curl https://athkiasaris1.github.io/CreativeCloudProcessKiller-web/currentversionwtext
+ curl https://athkiasaris1.github.io/CreativeCloudProcessKiller-web/currentprereleaseversionwtext
+ echo[
+ echo  To Update go to the github!
+ echo[
+ pause
+ exit
+)
+
 :menu
 title Creative Cloud Process Killer
-echo[
 echo[
 echo            --------------------------
 echo           ^|                          ^|
 echo           ^|   Adobe Creative Cloud   ^|
 echo           ^|      Process Killer      ^|
 echo           ^|                          ^|
-echo           ^|       Version: 1.4       ^|
+echo           ^|       Version: 1.5       ^|
 echo           ^|                          ^|
 echo           ^| [1]   Kill all Creative  ^|
 echo           ^|        Cloud Processes   ^|
@@ -128,13 +144,33 @@ echo           ^|                          ^|
 echo           ^| [4]      Credits         ^|
 echo           ^|                          ^|
 echo           ^|                          ^|
-echo           ^| [5]       EXIT           ^|
+echo           ^| [5]  Check for Updates   ^|
+echo           ^|                          ^|
+echo           ^|                          ^|
+echo           ^| [6]       EXIT           ^|
 echo           ^|                          ^|
 echo            --------------------------
 echo[
-choice /C:12345 /N /M ".                  Option: 
+choice /C:123456 /N /M ".                  Option: 
 
-if errorlevel 5 exit
+if errorlevel 6 exit
+if errorlevel 5 (
+title Updates ^> Creative Cloud Stopper Killer
+cls
+echo[
+echo  Check for updates
+echo[
+echo  Your Version: 1.5
+echo[
+curl https://athkiasaris1.github.io/CreativeCloudProcessKiller-web/currentversionwtext
+curl https://athkiasaris1.github.io/CreativeCloudProcessKiller-web/currentprereleaseversionwtext
+echo[
+echo  To Update go to the github!
+echo[
+pause
+cls
+goto menu
+)
 if errorlevel 4 (
 title Credits ^> Creative Cloud Process Killer
 cls
