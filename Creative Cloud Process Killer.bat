@@ -130,7 +130,7 @@ echo           ^|                          ^|
 echo           ^|   Adobe Creative Cloud   ^|
 echo           ^|      Process Killer      ^|
 echo           ^|                          ^|
-echo           ^|       Version: 1.5       ^|
+echo           ^|       Version: 1.6       ^|
 echo           ^|                          ^|
 echo           ^| [1]   Kill all Creative  ^|
 echo           ^|        Cloud Processes   ^|
@@ -138,40 +138,19 @@ echo           ^|                          ^|
 echo           ^| [2]     Stop Creative    ^|
 echo           ^|      Cloud from start up ^|
 echo           ^|                          ^|
-echo           ^| [3]   Open the GitHub    ^|
+echo           ^| [3]      Extras          ^|
 echo           ^|                          ^|
 echo           ^|                          ^|
-echo           ^| [4]      Credits         ^|
+echo           ^| [4]  Check for Updates   ^|
 echo           ^|                          ^|
 echo           ^|                          ^|
-echo           ^| [5]  Check for Updates   ^|
-echo           ^|                          ^|
-echo           ^|                          ^|
-echo           ^| [6]       EXIT           ^|
+echo           ^| [5]       EXIT           ^|
 echo           ^|                          ^|
 echo            --------------------------
 echo[
-choice /C:123456 /N /M ".                  Option: 
+choice /C:1234567 /N /M ".                  Option: 
 
-if errorlevel 6 exit
-if errorlevel 5 (
-title Updates ^> Creative Cloud Stopper Killer
-cls
-echo[
-echo  Check for updates
-echo[
-echo  Your Version: 1.5
-echo[
-curl https://athkiasaris1.github.io/CreativeCloudProcessKiller-web/currentversionwtext
-curl https://athkiasaris1.github.io/CreativeCloudProcessKiller-web/currentprereleaseversionwtext
-echo[
-echo  To Update go to the github!
-echo[
-pause
-cls
-goto menu
-)
-if errorlevel 4 (
+if errorlevel 7 (
 title Credits ^> Creative Cloud Process Killer
 cls
 echo[
@@ -208,9 +187,77 @@ pause
 cls
 goto menu
 )
-if errorlevel 3 (
+if errorlevel 6 (
 cls
 start https://github.com/athkiasaris1/Creative-Cloud-Process-Killer
+goto menu
+)
+if errorlevel 5 exit
+if errorlevel 4 (
+title Updates ^> Creative Cloud Stopper Killer
+cls
+echo[
+echo  Checking The Ineternet Connection
+Ping www.google.com -n 1 -w 1000
+cls
+if errorlevel 1 (
+echo[
+echo  Check for updates
+echo[
+echo  Your Version: 1.6
+echo[
+echo  Please Connect to the Internet
+echo  to Check for Updates
+echo[
+) else (
+echo[
+echo  Check for updates
+echo[
+echo  Your Version: 1.6
+curl https://athkiasaris1.github.io/CreativeCloudProcessKiller-web/currentversionwtext
+curl https://athkiasaris1.github.io/CreativeCloudProcessKiller-web/currentprereleaseversionwtext
+echo[
+echo  To Update go to the github!
+echo[
+)
+pause
+cls
+goto menu
+)
+if errorlevel 3 (
+title Extras ^> Creative Cloud Process Killer
+cls
+echo[
+echo[
+echo            --------------------------
+echo           ^|                          ^|
+echo           ^|          Extras          ^|
+echo           ^|                          ^|
+echo           ^| [4] Check for Updates    ^|
+echo           ^|                          ^|
+echo           ^|                          ^|
+echo           ^| [6]  Open the GitHub     ^|
+echo           ^|                          ^|
+echo           ^|                          ^|
+echo           ^| [7]      Credits         ^|
+echo           ^|                          ^|
+echo           ^|                          ^|
+echo            --------------------------
+echo[
+echo[
+echo[
+echo[
+echo[
+echo[
+echo[
+echo[
+echo[
+echo[
+echo[
+echo[
+echo[
+pause
+cls
 goto menu
 )
 if errorlevel 2 (
@@ -226,7 +273,7 @@ echo[
 echo   WARNING 2 IF YOU WANT NONE OF THE
 echo   CC PROCESSES RUNNING PLEASE 
 echo   DISABLE CCXProcess.exe FROM TASK
-echo   MANAGER START UP
+echo   MANAGER START UP MENU
 echo[
 pause
 echo[
