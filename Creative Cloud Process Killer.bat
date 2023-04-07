@@ -1,10 +1,11 @@
 title Loading ^> Creative Cloud Process Killer
 @echo off
 mode con: cols=50 lines=30
+set version=1.7
 cls
 
 :args
-if "%~1"=="" GOTO menu
+if "%~1"=="" GOTO startscreen
 if "%~1"=="-help" (
 title Creative Cloud Process Killer
 echo[
@@ -108,21 +109,68 @@ if "%~1"=="-stopautocc" (
 if "%~1"=="-updates" (
  title Updates ^> Creative Cloud Stopper Killer
  cls
- echo[
- echo  Check for updates
- echo[
- echo  Your Version: 1.5
- echo[
- curl https://athkiasaris1.github.io/CreativeCloudProcessKiller-web/currentversionwtext
- curl https://athkiasaris1.github.io/CreativeCloudProcessKiller-web/currentprereleaseversionwtext
- echo[
- echo  To Update go to the github!
- echo[
+echo[
+echo  Checking The Ineternet Connection
+Ping www.google.com -n 1 -w 1000
+cls
+if errorlevel 1 (
+echo[
+echo  Check for updates
+echo[
+echo  Your Version: %version%
+echo[
+echo  Please Connect to the Internet
+echo  to Check for Updates
+echo[
+) else (
+echo[
+echo  Check for updates
+echo[
+echo  Your Version: %version%
+curl https://athkiasaris1.github.io/CreativeCloudProcessKiller-web/currentversionwtext
+curl https://athkiasaris1.github.io/CreativeCloudProcessKiller-web/currentprereleaseversionwtext
+echo[
+echo  To Update go to the github!
+echo[
+)
  pause
  exit
 )
-
+:startscreen
+cls
+title Creative Cloud Process Killer [ver %version%]
+echo[
+echo[
+echo[
+echo[
+echo[
+echo[
+echo[
+echo[
+echo             _____  _____ ______ _   __
+echo            /  __ \/  __ \^| ___ \ ^| / /
+echo            ^| /  \/^| /  \/^| ^|_/ / ^|/ / 
+echo            ^| ^|    ^| ^|    ^|  __/^|    \
+echo            ^| \__/\^| \__/\^| ^|   ^| ^|\  \
+echo             \____/ \____/\_^|   \_^| \_/
+echo           Creative Cloud Process Killer
+echo[
+echo[
+echo     Welcome to Creative Cloud Process Killer!
+echo[
+echo[
+echo[
+echo[
+echo[
+echo[
+echo[
+echo[
+echo[
+echo[
+echo[
+pause
 :menu
+cls
 title Creative Cloud Process Killer
 echo[
 echo            --------------------------
@@ -130,7 +178,7 @@ echo           ^|                          ^|
 echo           ^|   Adobe Creative Cloud   ^|
 echo           ^|      Process Killer      ^|
 echo           ^|                          ^|
-echo           ^|       Version: 1.6       ^|
+echo           ^|       Version: %version%       ^|
 echo           ^|                          ^|
 echo           ^| [1]   Kill all Creative  ^|
 echo           ^|        Cloud Processes   ^|
@@ -204,7 +252,7 @@ if errorlevel 1 (
 echo[
 echo  Check for updates
 echo[
-echo  Your Version: 1.6
+echo  Your Version: %version%
 echo[
 echo  Please Connect to the Internet
 echo  to Check for Updates
@@ -213,7 +261,7 @@ echo[
 echo[
 echo  Check for updates
 echo[
-echo  Your Version: 1.6
+echo  Your Version: %version%
 curl https://athkiasaris1.github.io/CreativeCloudProcessKiller-web/currentversionwtext
 curl https://athkiasaris1.github.io/CreativeCloudProcessKiller-web/currentprereleaseversionwtext
 echo[
@@ -263,6 +311,14 @@ goto menu
 if errorlevel 2 (
 title Start Up Stopper ^> Creative Cloud Process Killer
 cls
+echo             _____  _____ ______ _   __
+echo            /  __ \/  __ \^| ___ \ ^| / /
+echo            ^| /  \/^| /  \/^| ^|_/ / ^|/ / 
+echo            ^| ^|    ^| ^|    ^|  __/^|    \
+echo            ^| \__/\^| \__/\^| ^|   ^| ^|\  \
+echo             \____/ \____/\_^|   \_^| \_/
+echo           Creative Cloud Process Killer
+echo --------------------------------------------------
 echo[
 echo  Creative Cloud Start Up Stopper
 echo[
@@ -288,6 +344,14 @@ goto menu
 if errorlevel 1 (
 title Creative Cloud Process Killer
 cls
+echo             _____  _____ ______ _   __
+echo            /  __ \/  __ \^| ___ \ ^| / /
+echo            ^| /  \/^| /  \/^| ^|_/ / ^|/ / 
+echo            ^| ^|    ^| ^|    ^|  __/^|    \
+echo            ^| \__/\^| \__/\^| ^|   ^| ^|\  \
+echo             \____/ \____/\_^|   \_^| \_/
+echo           Creative Cloud Process Killer
+echo --------------------------------------------------
 echo[
 echo  Adobe Creative Cloud ^(CC^) Process Killer
 echo[
