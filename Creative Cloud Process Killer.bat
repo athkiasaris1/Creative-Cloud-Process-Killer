@@ -1,7 +1,7 @@
 title Loading ^> Creative Cloud Process Killer
 @echo off
 mode con: cols=50 lines=30
-set version=1.7
+set version=1.7.1
 cls
 
 :args
@@ -107,30 +107,43 @@ if "%~1"=="-stopautocc" (
 )
 
 if "%~1"=="-updates" (
- title Updates ^> Creative Cloud Stopper Killer
- cls
+title Updates ^> Creative Cloud Stopper Killer
+cls
 echo[
 echo  Checking The Ineternet Connection
 Ping www.google.com -n 1 -w 1000
 cls
 if errorlevel 1 (
 echo[
-echo  Check for updates
+echo            --------------------------
+echo           ^|                          ^|
+echo           ^|     Check for Updates    ^|
+echo           ^|                          ^|
+echo           ^|    Your Version: %version%   ^|
+echo           ^|                          ^|
+echo           ^|   Please Connect to the  ^|
+echo           ^|   Internet to Check for  ^|
+echo           ^|         Updates          ^|
+echo           ^|                          ^|
+echo            --------------------------
 echo[
-echo  Your Version: %version%
-echo[
-echo  Please Connect to the Internet
-echo  to Check for Updates
 echo[
 ) else (
 echo[
-echo  Check for updates
+echo            --------------------------
+echo           ^|                          ^|
+echo           ^|     Check for Updates    ^|
+echo           ^|                          ^|
+echo           ^|   Your Version: %version%    ^|
+echo           ^|                          ^|
+curl https://athkiasaris1.github.io/CreativeCloudProcessKiller-web/1.7.1+/currentversionwithlines.html
+curl https://athkiasaris1.github.io/CreativeCloudProcessKiller-web/1.7.1+/currentprereleasewithlines.html
+echo           ^|                          ^|
+echo           ^|    To Update go to the   ^|
+echo           ^|          Github          ^|
+echo           ^|                          ^|
+echo            --------------------------
 echo[
-echo  Your Version: %version%
-curl https://athkiasaris1.github.io/CreativeCloudProcessKiller-web/currentversionwtext
-curl https://athkiasaris1.github.io/CreativeCloudProcessKiller-web/currentprereleaseversionwtext
-echo[
-echo  To Update go to the github!
 echo[
 )
  pause
@@ -178,7 +191,7 @@ echo           ^|                          ^|
 echo           ^|   Adobe Creative Cloud   ^|
 echo           ^|      Process Killer      ^|
 echo           ^|                          ^|
-echo           ^|       Version: %version%       ^|
+echo           ^|      Version: %version%      ^|
 echo           ^|                          ^|
 echo           ^| [1]   Kill all Creative  ^|
 echo           ^|        Cloud Processes   ^|
@@ -250,22 +263,35 @@ Ping www.google.com -n 1 -w 1000
 cls
 if errorlevel 1 (
 echo[
-echo  Check for updates
+echo            --------------------------
+echo           ^|                          ^|
+echo           ^|     Check for Updates    ^|
+echo           ^|                          ^|
+echo           ^|    Your Version: %version%   ^|
+echo           ^|                          ^|
+echo           ^|   Please Connect to the  ^|
+echo           ^|   Internet to Check for  ^|
+echo           ^|         Updates          ^|
+echo           ^|                          ^|
+echo            --------------------------
 echo[
-echo  Your Version: %version%
-echo[
-echo  Please Connect to the Internet
-echo  to Check for Updates
 echo[
 ) else (
 echo[
-echo  Check for updates
+echo            --------------------------
+echo           ^|                          ^|
+echo           ^|     Check for Updates    ^|
+echo           ^|                          ^|
+echo           ^|   Your Version: %version%    ^|
+echo           ^|                          ^|
+curl https://athkiasaris1.github.io/CreativeCloudProcessKiller-web/1.7.1+/currentversionwithlines.html
+curl https://athkiasaris1.github.io/CreativeCloudProcessKiller-web/1.7.1+/currentprereleasewithlines.html
+echo           ^|                          ^|
+echo           ^|    To Update go to the   ^|
+echo           ^|          Github          ^|
+echo           ^|                          ^|
+echo            --------------------------
 echo[
-echo  Your Version: %version%
-curl https://athkiasaris1.github.io/CreativeCloudProcessKiller-web/currentversionwtext
-curl https://athkiasaris1.github.io/CreativeCloudProcessKiller-web/currentprereleaseversionwtext
-echo[
-echo  To Update go to the github!
 echo[
 )
 pause
