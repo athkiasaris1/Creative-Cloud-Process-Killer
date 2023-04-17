@@ -1,7 +1,7 @@
 title Loading ^> Creative Cloud Process Killer
 @echo off
 mode con: cols=50 lines=30
-set version=1.7.1
+set version=1.7.2
 cls
 
 :args
