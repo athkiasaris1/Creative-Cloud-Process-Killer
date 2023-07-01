@@ -9,10 +9,7 @@ Currently supported versions!
 |  1.7.2  | :white_check_mark: |
 |   1.7   | :x:                |
 |   1.6   | :x:                |
-|   1.5   | :x:                |
-|   1.4   | :x:                |
-|  1.3.1  | :x:                |
-| 1.1-1.3 | :x:                |
+| 1.1-1.5 | :x:                |
 
 ## Reporting a Vulnerability
 
