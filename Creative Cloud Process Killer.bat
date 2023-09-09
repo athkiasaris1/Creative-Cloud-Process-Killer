@@ -1,7 +1,7 @@
 title Loading ^> Creative Cloud Process Killer
 @echo off
 mode con: cols=50 lines=30
-set version=1.7.2
+set version=1.7.3
 cls
 
 :args
@@ -13,6 +13,8 @@ echo  USAGE -killcc ^-^> Kills all CC Processes
 echo[
 echo        -stopautocc ^-^> Stops the CC Processes
 echo                            from startup
+echo[
+echo        -updates ^-^> Checks for updates
 echo[
 pause
 exit
