@@ -6,10 +6,11 @@ Currently supported versions!
 
 | Version | Supported          |
 | ------- | ------------------ |
-|  1.7.2  | :white_check_mark: |
+|  1.7.3  | :white_check_mark: |
+|  1.7.2  | :x:                |
+|  1.7.1  | :x:                |
 |   1.7   | :x:                |
-|   1.6   | :x:                |
-| 1.1-1.5 | :x:                |
+| 1.1-1.6 | :x:                |
 
 ## Reporting a Vulnerability
 
